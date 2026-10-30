@@ -45,9 +45,9 @@ def if_drink(food_name,price):
     lbl=Label(top,text="آیا مایل به سفارش نوشیدنی هم هستید؟")
     lbl.config(bg="#ff3838",fg="white")
     lbl.grid(row=4,column=3,pady=10)
-    drink_but_yes=tb.Button(master=top, text="بله", bootstyle="success,outline",command=lambda:[top.destroy(),drink(food_name,price)])
+    drink_but_yes=tb.Button(master=top, text="بله", bootstyle="success-outline",command=lambda:[top.destroy(),drink(food_name,price)])
     drink_but_yes.grid(row=8, column=3, pady=10)
-    drink_but_no=tb.Button(master=top, text="خیر", bootstyle="danger,outline",command=lambda:[top.destroy(),chance_second(food_name,price)])
+    drink_but_no=tb.Button(master=top, text="خیر", bootstyle="danger-outline",command=lambda:[top.destroy(),chance_second(food_name,price)])
     drink_but_no.grid(row=9, column=3, pady=10)
 
 def iranian_food_button_clicked():
@@ -188,7 +188,7 @@ def fast_food_button_clicked():
     label_chicken = tb.Label(master=top, image=image6, width=50)
     label_chicken.grid(row=4, column=0, pady=(8, 20), padx=10)
 
-    chicken_o_button = tb.Button(master=top, text="سفارش دادن", bootstyle="danger,outline",command=lambda:[top.destroy(), if_drink("مرغ کنتاکی", 25000)])
+    chicken_o_button = tb.Button(master=top, text="سفارش دادن", bootstyle="danger-outline",command=lambda:[top.destroy(), if_drink("مرغ کنتاکی", 25000)])
     chicken_o_button.grid(row=6, column=0, pady=10)
 
     # Additional information for the pizza
@@ -199,7 +199,7 @@ def fast_food_button_clicked():
     label_Pizza = tb.Label(master=top, image=image7, width=50)
     label_Pizza.grid(row=4, column=1, pady=(8, 20), padx=10)
 
-    pizza_o_button = tb.Button(master=top, text="سفارش دادن", bootstyle="danger,outline",command=lambda: [top.destroy(),if_drink("پیتزا", 30000)])
+    pizza_o_button = tb.Button(master=top, text="سفارش دادن", bootstyle="danger-outline",command=lambda: [top.destroy(),if_drink("پیتزا", 30000)])
     pizza_o_button.grid(row=6, column=1, pady=10)
 
     # Additional information for the burger
@@ -210,7 +210,7 @@ def fast_food_button_clicked():
     label_hamburger = tb.Label(master=top, image=image8, width=50)
     label_hamburger.grid(row=4, column=2, pady=(8, 20), padx=10)
 
-    hamburger_o_button = tb.Button(master=top, text="سفارش دادن", bootstyle="danger,outline", command=lambda: [top.destroy(),if_drink("همبرگر", 35000)])
+    hamburger_o_button = tb.Button(master=top, text="سفارش دادن", bootstyle="danger-outline", command=lambda: [top.destroy(),if_drink("همبرگر", 35000)])
     hamburger_o_button.grid(row=6, column=2, pady=10)
 
     price_cheezburger = tk.Label(master=top, text="     چیزبرگر\nقیمت: ۳۵۰۰۰ تومان", font="Morvarid 12 bold")
@@ -220,7 +220,7 @@ def fast_food_button_clicked():
     label_cheesburger = tb.Label(master=top, image=image9, width=50)
     label_cheesburger.grid(row=4, column=3, pady=(8, 20), padx=10)
 
-    cheezburger_o_button = tb.Button(master=top, text="سفارش دادن", bootstyle="danger,outline", command=lambda:[top.destroy(), if_drink("چیزبرگر", 35000)])
+    cheezburger_o_button = tb.Button(master=top, text="سفارش دادن", bootstyle="danger-outline", command=lambda:[top.destroy(), if_drink("چیزبرگر", 35000)])
     cheezburger_o_button.grid(row=6, column=3, pady=10)
 
     label_hotdog = tb.Label(master=top, image=image10, width=50)
@@ -230,7 +230,7 @@ def fast_food_button_clicked():
     price_hotdog.config(bg="#f39c12")
     price_hotdog.grid(row=5, column=4, pady=(0, 20), padx=10)
 
-    hotdog_o_button = tb.Button(master=top, text="سفارش دادن", bootstyle="danger,outline", command=lambda: [top.destroy(),if_drink("هات داگ", 35000)])
+    hotdog_o_button = tb.Button(master=top, text="سفارش دادن", bootstyle="danger-outline", command=lambda: [top.destroy(),if_drink("هات داگ", 35000)])
     hotdog_o_button.grid(row=6, column=4, pady=10)
 
 

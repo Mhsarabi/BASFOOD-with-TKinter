@@ -1,2 +1,2 @@
-ttkbootstrap
-Pillow
+pillow==13.0.0
+ttkbootstrap==2.2.6
