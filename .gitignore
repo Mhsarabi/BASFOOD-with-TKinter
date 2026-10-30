@@ -30,3 +30,6 @@ desktop.ini
 
 # Logs
 *.log
+
+__pycache__/
+*.py[cod]
