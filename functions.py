@@ -94,7 +94,7 @@ def iranian_food_button_clicked():
     label_zeresh = tb.Label(master=iran, image=image1, width=50)
     label_zeresh.grid(row=4, column=1, pady=(8, 20), padx=10)
 
-    zeresh_o_button = tb.Button(master=iran, text="سفارش دادن", bootstyle="warning,outline",command=lambda: [iran.destroy(),if_drink("زرشک پلو با مرغ", 10000)])
+    zeresh_o_button = tb.Button(master=iran, text="سفارش دادن", bootstyle="warning-outline",command=lambda: [iran.destroy(),if_drink("زرشک پلو با مرغ", 10000)])
     zeresh_o_button.grid(row=6, column=1, pady=10)
 
     # Additional information for ghormeh
@@ -105,7 +105,7 @@ def iranian_food_button_clicked():
     price_ghormeh.config(bg="red",fg="white")
     price_ghormeh.grid(row=5, column=2, pady=(0, 20), padx=10)
 
-    ghormeh_o_button = tb.Button(master=iran, text="سفارش دادن", bootstyle="warning,outline",command=lambda: [iran.destroy(),if_drink("قرمه سبزی", 15000)])
+    ghormeh_o_button = tb.Button(master=iran, text="سفارش دادن", bootstyle="warning-outline",command=lambda: [iran.destroy(),if_drink("قرمه سبزی", 15000)])
     ghormeh_o_button.grid(row=6, column=2, pady=10)
 
     # Additional information for geymeh
@@ -116,7 +116,7 @@ def iranian_food_button_clicked():
     price_gheymeh.config(bg="red",fg="white")
     price_gheymeh.grid(row=5, column=3, pady=(0, 20), padx=10)
 
-    gheymeh_o_button = tb.Button(master=iran, text="سفارش دادن", bootstyle="warning,outline",command=lambda: [iran.destroy(),if_drink("قیمه با سیب زمینی", 20000)])
+    gheymeh_o_button = tb.Button(master=iran, text="سفارش دادن", bootstyle="warning-outline",command=lambda: [iran.destroy(),if_drink("قیمه با سیب زمینی", 20000)])
     gheymeh_o_button.grid(row=6, column=3, pady=10)
 
 
@@ -127,7 +127,7 @@ def iranian_food_button_clicked():
     label_kebab = tb.Label(master=iran, image=image4, width=50)
     label_kebab.grid(row=4, column=0, pady=(8, 20), padx=10)
 
-    kebab_o_button = tb.Button(master=iran, text="سفارش دادن", bootstyle="warning,outline",command=lambda:[ iran.destroy(),if_drink("کباب با مخلفات", 10000)])
+    kebab_o_button = tb.Button(master=iran, text="سفارش دادن", bootstyle="warning-outline",command=lambda:[ iran.destroy(),if_drink("کباب با مخلفات", 10000)])
     kebab_o_button.grid(row=6, column=0, pady=10)
 
     price_gogeh = tk.Label(master=iran, text="     جوجه با مخلفات \nقیمت: ۱۰۰۰۰ تومان", font="Morvarid 12 bold")
@@ -137,7 +137,7 @@ def iranian_food_button_clicked():
     label_gogeh = tb.Label(master=iran, image=image5, width=50)
     label_gogeh.grid(row=4, column=5, pady=(8, 20), padx=10)
 
-    gogeh_o_button = tb.Button(master=iran, text="سفارش دادن", bootstyle="warning,outline",command=lambda: [iran.destroy(),if_drink("جوجه با مخلفات", 10000)])
+    gogeh_o_button = tb.Button(master=iran, text="سفارش دادن", bootstyle="warning-outline",command=lambda: [iran.destroy(),if_drink("جوجه با مخلفات", 10000)])
     gogeh_o_button.grid(row=6, column=5, pady=10)
 
 
@@ -420,7 +420,7 @@ def chance_second(food_name="",price=0,drink="",p_drink=0):
     P_adrink=Label(top,text=f"قیمت نوشیدنی:{price+p_drink}تومان")
     P_adrink.config(bg="white",fg="black")
     P_adrink.grid(row=9,column=4,padx=200)
-    number_button=tb.Button(master=top, text="می خوام شانسم را امتحان کنم", bootstyle="warning,outline",command=lambda:[top.after(2000,chance_challeng(food_name,price,drink,p_drink)),top.after(5000,lambda:top.destroy())])
+    number_button=tb.Button(master=top, text="می خوام شانسم را امتحان کنم", bootstyle="warning-outline",command=lambda:[top.after(2000,chance_challeng(food_name,price,drink,p_drink)),top.after(5000,lambda:top.destroy())])
     number_button.grid(row=10, column=4, padx=200)
     tabrik=Label(top,fg="black")
     tabrik.grid(row=11,column=4,padx=200)

@@ -107,7 +107,7 @@ t_icon.grid(row=0, column=0,sticky="nw",padx=100,pady=25)
 
 # Home button
 home_button = tk.Button(content_frame, text="خانه", font="Morvarid 10 bold", command=home_button_clicked)
-home_button.config(background="black")
+home_button.config(background="black", foreground="white")
 home_button.grid(row=0, column=5, pady=20, sticky="e")
 
 home_button.bind("<Enter>",home_button_hover)
@@ -115,7 +115,7 @@ home_button.bind("<Leave>",home_button_back)
 
 # Iranian Foods button
 iranian_food_button = tk.Button(content_frame, text="غذاهای ایرانی", font="Morvarid 10 bold", command=iranian_food_button_clicked)
-iranian_food_button.config(background="black")
+iranian_food_button.config(background="black", foreground="white")
 iranian_food_button.grid(row=0, column=4, pady=20,padx=10 ,sticky="e")
 
 iranian_food_button.bind("<Enter>",iranian_food_button_hover)
@@ -123,29 +123,26 @@ iranian_food_button.bind("<Leave>",iranian_food_button_back)
 
 # Fast Food button
 fast_food_button = tk.Button(content_frame, text="فست فود", font="Morvarid 10 bold", command=fast_food_button_clicked)
-fast_food_button.config(background="black")
+fast_food_button.config(background="black",foreground="white")
 fast_food_button.grid(row=0, column=3, pady=20, sticky="e")
 
 fast_food_button.bind("<Enter>",fast_food_button_hover)
 fast_food_button.bind("<Leave>",fast_food_button_back)
 
 drink_button = tk.Button(content_frame, text="نوشیدنی",command=drink, font="Morvarid 10 bold")
-drink_button.config(background="black")
+drink_button.config(background="black", foreground="white")
 drink_button.grid(row=0, column=2, pady=20, sticky="e",padx=10)
 
 drink_button.bind("<Enter>",drink_button_hover)
 drink_button.bind("<Leave>",drink_button_back)
 
 chance_button = tk.Button(content_frame, text="شانس",command=chance_first, font="Morvarid 10 bold")
-chance_button.config(background="black")
+chance_button.config(background="black", foreground="white")
 chance_button.grid(row=0, column=1, pady=20, sticky="e",padx=10)
 
 chance_button.bind("<Enter>",chance_button_hover)
 chance_button.bind("<Leave>",chance_button_back)
 
-fast_food1_button = tk.Button(content_frame, text="", font="Morvarid 10 bold", command=fast_food_button_clicked)
-fast_food1_button.config(background="black")
-fast_food1_button.grid(row=0, column=6, pady=20, sticky="e")
 
 
 # Customer Information - Red Row
@@ -162,13 +159,13 @@ customer_inventory_label = tk.Label(red_row)
 customer_inventory_label.config( background="red", foreground="orange")
 customer_inventory_label.grid(row=1, column=5, padx=100,sticky="e")  # Adjusted column and added sticky option
 
-factor_button = tb.Button(content_frame, text="فاکتور",command=factor,bootstyle="danger,outline")
+factor_button = tb.Button(content_frame, text="فاکتور",command=factor,bootstyle="danger-outline")
 factor_button.grid(row=1, column=0, sticky="w",padx=10)
 
 
 
 # Create a Canvas for the food items
-canvas = tk.Canvas(content_frame, width=2000)
+canvas = tk.Canvas(content_frame, width=2000, bg="white")
 canvas.grid(row=2, column=0, columnspan=9, sticky="nsew")
 
 # Add a vertical scrollbar to the canvas
@@ -180,7 +177,7 @@ canvas.config(yscrollcommand=scrollbar.set)
 canvas.bind("<Configure>", on_configure)
 
 # Add a Frame to the Canvas
-food_frame = tk.Frame(canvas)
+food_frame = tk.Frame(canvas, bg="white")
 canvas.create_window((0, 0), window=food_frame, anchor="nw", width=1500)
 
 
@@ -234,7 +231,7 @@ image4 = ImageTk.PhotoImage(kabab)
 gogeh = Image.open("pic/gogeh.webp").resize((100, 100))
 image5 = ImageTk.PhotoImage(gogeh)
 
-food_label = tk.Label(master=food_frame, text="غداهای ایرانی", font="Helvectica 18 bold")
+food_label = tk.Label(master=food_frame, text="غداهای ایرانی", font="Helvectica 18 bold",bg="white")
 food_label.config(fg="black")
 food_label.grid(row=2, column=6, pady=0, sticky="ns")
 
@@ -245,7 +242,7 @@ price_zeresh.grid(row=4, column=1, pady=(0, 20), padx=10)
 label_zeresh = tb.Label(master=food_frame, image=image1, width=50)
 label_zeresh.grid(row=3, column=1, pady=(8, 20), padx=10)
 
-zeresh_o_button = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="warning,outline",command=iranian_food_button_clicked)
+zeresh_o_button = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="warning-outline",command=iranian_food_button_clicked)
 zeresh_o_button.grid(row=5, column=1, pady=10)
 
 # Additional information for ghormeh
@@ -255,7 +252,7 @@ label_ghormeh.grid(row=3, column=2, pady=(8, 20), padx=10)
 price_ghormeh = tb.Label(master=food_frame, text="        قرمه سبزی \n قیمت: ۱۵۰۰۰ تومان", font="Morvarid 12 bold", bootstyle="default")
 price_ghormeh.grid(row=4, column=2, pady=(0, 20), padx=10)
 
-ghormeh_o_button = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="warning,outline",command=iranian_food_button_clicked)
+ghormeh_o_button = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="warning-outline",command=iranian_food_button_clicked)
 ghormeh_o_button.grid(row=5, column=2, pady=10)
 
 # Additional information for geymeh
@@ -265,7 +262,7 @@ label_gheymeh.grid(row=3, column=3, pady=(8, 20), padx=10)
 price_gheymeh = tb.Label(master=food_frame, text="   قیمه با سیب زمینی\nقیمت: ۲۰۰۰۰ تومان", font="Morvarid 12 bold", bootstyle="default")
 price_gheymeh.grid(row=4, column=3, pady=(0, 20), padx=10)
 
-gheymeh_o_button = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="warning,outline",command=iranian_food_button_clicked)
+gheymeh_o_button = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="warning-outline",command=iranian_food_button_clicked)
 gheymeh_o_button.grid(row=5, column=3, pady=10)
 
 
@@ -275,7 +272,7 @@ price_kebab.grid(row=4, column=4, pady=(0, 20), padx=20)
 label_kebab = tb.Label(master=food_frame, image=image4, width=50)
 label_kebab.grid(row=3, column=4, pady=(8, 20), padx=10)
 
-kebab_o_button = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="warning,outline",command=iranian_food_button_clicked)
+kebab_o_button = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="warning-outline",command=iranian_food_button_clicked)
 kebab_o_button.grid(row=5, column=4, pady=10)
 
 price_gogeh = tb.Label(master=food_frame, text="     جوجه با مخلفات \nقیمت: 1۰۰۰۰ تومان", font="Morvarid 12 bold", bootstyle="default")
@@ -284,7 +281,7 @@ price_gogeh.grid(row=4, column=5, pady=(0, 20), padx=20)
 label_gogeh = tb.Label(master=food_frame, image=image5, width=50)
 label_gogeh.grid(row=3, column=5, pady=(8, 20), padx=10)
 
-gogeh_o_button = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="warning,outline",command=iranian_food_button_clicked)
+gogeh_o_button = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="warning-outline",command=iranian_food_button_clicked)
 gogeh_o_button.grid(row=5, column=5, pady=10)
 
 # Food items (Second row)
@@ -303,7 +300,7 @@ image9 = ImageTk.PhotoImage(cheesburger)
 cheesburger = Image.open("pic/hotdog.jpg").resize((100, 100))
 image10 = ImageTk.PhotoImage(cheesburger)
 
-food_label_2 = tk.Label(master=food_frame, text="فست فود", font="Helvectica 18 bold")
+food_label_2 = tk.Label(master=food_frame, text="فست فود", font="Helvectica 18 bold",bg="white")
 food_label_2.config(fg="red")
 food_label_2.grid(row=6, column=6, pady=10, sticky="ns")
 
@@ -314,7 +311,7 @@ price_chicken.grid(row=9, column=1, pady=(0, 20), padx=10)
 label_chicken = tb.Label(master=food_frame, image=image6, width=50)
 label_chicken.grid(row=7, column=1, pady=(8, 20), padx=10)
 
-order_button_chicken = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="danger,outline")
+order_button_chicken = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="danger-outline")
 order_button_chicken.grid(row=10, column=1, pady=10)
 
 # Additional information for the pizza
@@ -324,7 +321,7 @@ price_Pizza.grid(row=9, column=2, pady=(0, 20), padx=10)
 label_Pizza = tb.Label(master=food_frame, image=image7, width=50)
 label_Pizza.grid(row=7, column=2, pady=(8, 20), padx=10)
 
-order_button_Pizza = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="danger,outline",command=fast_food_button_clicked)
+order_button_Pizza = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="danger-outline",command=fast_food_button_clicked)
 order_button_Pizza.grid(row=10, column=2, pady=10)
 
 # Additional information for the burger
@@ -334,7 +331,7 @@ price_hamburger.grid(row=9, column=3, pady=(0, 20), padx=10)
 label_hamburger = tb.Label(master=food_frame, image=image8, width=50)
 label_hamburger.grid(row=7, column=3, pady=(8, 20), padx=10)
 
-order_button_hamburger = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="danger,outline",command=fast_food_button_clicked)
+order_button_hamburger = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="danger-outline",command=fast_food_button_clicked)
 order_button_hamburger.grid(row=10, column=3, pady=10)
 
 price_cheezburger = tb.Label(master=food_frame, text="          چیزبرگر\nقیمت: ۳۵۰۰۰ تومان", font="Morvarid 12 bold", bootstyle="default")
@@ -343,7 +340,7 @@ price_cheezburger.grid(row=9, column=4, pady=(0, 20), padx=10)
 label_cheesburger = tb.Label(master=food_frame, image=image9, width=50)
 label_cheesburger.grid(row=7, column=4, pady=(8, 20), padx=10)
 
-order_button_cheesburger = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="danger,outline",command=fast_food_button_clicked)
+order_button_cheesburger = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="danger-outline",command=fast_food_button_clicked)
 order_button_cheesburger.grid(row=10, column=4, pady=10)
 
 label_hotdog = tb.Label(master=food_frame, image=image10, width=50)
@@ -352,7 +349,7 @@ label_hotdog.grid(row=7, column=5, pady=(8, 20), padx=10)
 price_hotdog = tb.Label(master=food_frame, text="          هات داگ\nقیمت: ۳۵۰۰۰ تومان", font="Morvarid 12 bold", bootstyle="default")
 price_hotdog.grid(row=9, column=5, pady=(0, 20), padx=10)
 
-order_button_hotdog = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="danger,outline",command=fast_food_button_clicked)
+order_button_hotdog = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="danger-outline",command=fast_food_button_clicked)
 order_button_hotdog.grid(row=10, column=5, pady=10)
 
 
@@ -368,7 +365,7 @@ price_chicken.grid(row=9, column=1, pady=(0, 20), padx=10)
 label_chicken = tb.Label(master=food_frame, image=image6, width=50)
 label_chicken.grid(row=7, column=1, pady=(8, 20), padx=10)
 
-order_button_chicken = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="danger,outline",command=fast_food_button_clicked)
+order_button_chicken = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="danger-outline",command=fast_food_button_clicked)
 order_button_chicken.grid(row=10, column=1, pady=10)
 
 # Additional information for the pizza
@@ -378,7 +375,7 @@ price_Pizza.grid(row=9, column=2, pady=(0, 20), padx=10)
 label_Pizza = tb.Label(master=food_frame, image=image7, width=50)
 label_Pizza.grid(row=7, column=2, pady=(8, 20), padx=10)
 
-order_button_Pizza = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="danger,outline",command=fast_food_button_clicked)
+order_button_Pizza = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="danger-outline",command=fast_food_button_clicked)
 order_button_Pizza.grid(row=10, column=2, pady=10)
 
 nooshabeh = Image.open("pic/nooshidan_nooshabeh.jpg").resize((100, 100))
@@ -391,7 +388,7 @@ delester = Image.open("pic/delester.jpg").resize((100, 100))
 image13 = ImageTk.PhotoImage(delester)
 
 
-food_label_2 = tk.Label(master=food_frame, text="نوشیدنی", font="Helvectica 18 bold")
+food_label_2 = tk.Label(master=food_frame, text="نوشیدنی", font="Helvectica 18 bold",bg="white")
 food_label_2.config(fg="black")
 food_label_2.grid(row=11, column=6, pady=10, sticky="ns")
 # Additional information for the burger
@@ -401,7 +398,7 @@ price_nooshabeh.grid(row=13, column=3, pady=(0, 20), padx=10)
 label_nooshabeh = tb.Label(master=food_frame, image=image11, width=50)
 label_nooshabeh.grid(row=12, column=3, pady=(8, 20), padx=10)
 
-order_button_nooshabeh = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="info,outline",command=drink)
+order_button_nooshabeh = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="info-outline",command=drink)
 order_button_nooshabeh.grid(row=14, column=3, pady=10)
 
 
@@ -411,7 +408,7 @@ price_Dough.grid(row=13, column=2, pady=(0, 20), padx=10)
 label_Dough = tb.Label(master=food_frame, image=image12, width=50)
 label_Dough.grid(row=12, column=2, pady=(8, 20), padx=10)
 
-order_button_Dough = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="info,outline",command=drink)
+order_button_Dough = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="info-outline",command=drink)
 order_button_Dough.grid(row=14, column=2, pady=10)
 
 
@@ -421,7 +418,7 @@ price_beer.grid(row=13, column=4, pady=(0, 20), padx=10)
 label_beer = tb.Label(master=food_frame, image=image13, width=50)
 label_beer.grid(row=12, column=4, pady=(8, 20), padx=10)
 
-order_button_beer = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="info,outline",command=drink)
+order_button_beer = tb.Button(master=food_frame, text="سفارش دادن", bootstyle="info-outline",command=drink)
 order_button_beer.grid(row=14, column=4, pady=10)
 
 # Configure row and column weights for centering
